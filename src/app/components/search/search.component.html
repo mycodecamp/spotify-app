@@ -1,0 +1,16 @@
+<h1>Music Search</h1>
+<p> Search the artist you like and find all list of albums and songs you want.</p>
+<form class="well">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Enter artist..." [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()" />
+	</div>
+</form>
+<div *ngIf="searchRes">
+	<div *ngFor="let artist of searchRes">
+		<div class="well">
+			<h1><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></h1>	
+			<p>{{artist.genres}}</p>		
+		</div>
+	</div>
+
+</div>
